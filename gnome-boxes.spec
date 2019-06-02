@@ -4,10 +4,10 @@
 #
 Name     : gnome-boxes
 Version  : 3.32.1
-Release  : 1
+Release  : 2
 URL      : https://download.gnome.org/sources/gnome-boxes/3.32/gnome-boxes-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/3.32/gnome-boxes-3.32.1.tar.xz
-Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
+Summary  : Simple GNOME application to access remote or virtual systems
 Group    : Development/Tools
 License  : LGPL-2.0 LGPL-2.1 LGPL-3.0
 Requires: gnome-boxes-bin = %{version}-%{release}
@@ -16,13 +16,17 @@ Requires: gnome-boxes-lib = %{version}-%{release}
 Requires: gnome-boxes-libexec = %{version}-%{release}
 Requires: gnome-boxes-license = %{version}-%{release}
 Requires: gnome-boxes-locales = %{version}-%{release}
+Requires: libosinfo
+Requires: osinfo-db-tools
 BuildRequires : appstream-glib
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : libarchive-dev
 BuildRequires : libgudev-dev
+BuildRequires : libosinfo
 BuildRequires : libsoup-dev
 BuildRequires : libusb-dev
+BuildRequires : osinfo-db-tools
 BuildRequires : pkgconfig(govirt-1.0)
 BuildRequires : pkgconfig(gtk-vnc-2.0)
 BuildRequires : pkgconfig(gudev-1.0)
@@ -42,8 +46,11 @@ BuildRequires : vte-dev
 BuildRequires : webkitgtk-dev
 
 %description
-# This is the directory where we put upstream vapi bindings when they
-# are outdated and we need a version with additional fixes.
+Boxes has acquired explicit permission from trademark owners for the usage and
+shipment (though we don't ship them but rather download them on demand) of their
+logos[1][3]. Please note that this permission does not extend to any derivate
+work but only applies to Boxes for the very specific purpose of identifying the
+products in question.
 
 %package bin
 Summary: bin components for the gnome-boxes package.
@@ -71,6 +78,7 @@ Requires: gnome-boxes-lib = %{version}-%{release}
 Requires: gnome-boxes-bin = %{version}-%{release}
 Requires: gnome-boxes-data = %{version}-%{release}
 Provides: gnome-boxes-devel = %{version}-%{release}
+Requires: gnome-boxes = %{version}-%{release}
 Requires: gnome-boxes = %{version}-%{release}
 
 %description dev
@@ -129,9 +137,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1558369355
-export GCC_IGNORE_WERROR=1
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export SOURCE_DATE_EPOCH=1559485902
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain   builddir
 ninja -v -C builddir
 
