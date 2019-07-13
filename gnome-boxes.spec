@@ -4,12 +4,12 @@
 #
 Name     : gnome-boxes
 Version  : 3.32.1
-Release  : 2
+Release  : 3
 URL      : https://download.gnome.org/sources/gnome-boxes/3.32/gnome-boxes-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/3.32/gnome-boxes-3.32.1.tar.xz
 Summary  : Simple GNOME application to access remote or virtual systems
 Group    : Development/Tools
-License  : LGPL-2.0 LGPL-2.1 LGPL-3.0
+License  : CC-BY-2.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
 Requires: gnome-boxes-bin = %{version}-%{release}
 Requires: gnome-boxes-data = %{version}-%{release}
 Requires: gnome-boxes-lib = %{version}-%{release}
@@ -41,6 +41,7 @@ BuildRequires : pkgconfig(tracker-sparql-2.0)
 BuildRequires : pkgconfig(vte-2.91)
 BuildRequires : pkgconfig(webkit2gtk-4.0)
 BuildRequires : pkgconfig(winpr2)
+BuildRequires : spice-gtk
 BuildRequires : spice-gtk-dev
 BuildRequires : vte-dev
 BuildRequires : webkitgtk-dev
@@ -136,8 +137,9 @@ locales components for the gnome-boxes package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1559485902
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1563038365
+export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
 export FFLAGS="$CFLAGS -fno-lto "
@@ -148,6 +150,7 @@ ninja -v -C builddir
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/gnome-boxes
 cp COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/COPYING
+cp copyright %{buildroot}/usr/share/package-licenses/gnome-boxes/copyright
 cp subprojects/gtk-frdp/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/subprojects_gtk-frdp_COPYING
 cp subprojects/libovf-glib/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/subprojects_libovf-glib_COPYING
 DESTDIR=%{buildroot} ninja -C builddir install
@@ -598,6 +601,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/gnome-boxes/COPYING
+/usr/share/package-licenses/gnome-boxes/copyright
 /usr/share/package-licenses/gnome-boxes/subprojects_gtk-frdp_COPYING
 /usr/share/package-licenses/gnome-boxes/subprojects_libovf-glib_COPYING
 
