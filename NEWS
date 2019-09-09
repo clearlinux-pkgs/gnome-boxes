@@ -1,3 +1,187 @@
+3.34.0 - Sep 09, 2019
+=====================
+
+Changes since 3.33.90
+
+  - Only show supported architectures in "Download an OS" page
+  - Fix crash with media enumeration
+  - Adjust appdata to pass the strict validation
+  - Added/updated/fixed translations:
+    - Czech
+    - Finnish
+    - Polish
+    - Slovenian
+    - Hungarian
+    - French
+    - Galician
+    - Catalan
+    - Korean
+    - Turkish
+    - Friulian
+    - Spanish
+    - Greek
+    - British English
+    - Dutch
+    - Croatian
+    - Italian
+    - Swedish
+    - Brazilian Portuguese
+
+All contributors to this release:
+
+Anders Jonsson <anders.jonsson@norsjovallen.se>
+Andre Klapper <aklapper@wikimedia.org>
+Balázs Úr <balazs@urbalazs.hu>
+Bruce Cowan <bruce@bcowan.me.uk>
+Charles Monzat <charles.monzat@free.fr>
+Daniel Mustieles <daniel.mustieles@gmail.com>
+Efstathios Iosifidis <eiosifidis@gnome.org>
+Fabio Tomat <f.t.public@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Fran Dieguez <frandieguez@gnome.org>
+Gábor Kelemen <kelemeng@openscope.org>
+Goran Vidović <trebelnik2@gmail.com>
+Hannie Dumoleyn <hannie@ubuntu-nl.org>
+Jiri Grönroos <jiri.gronroos@iki.fi>
+Jordi Mas <jmas@softcatala.org>
+Marek Černocký <marek@manet.cz>
+Matej Urbančič <mateju@svn.gnome.org>
+Milo Casagrande <milo@ubuntu.com>
+Petr Kovář <pknbe@volny.cz>
+Piotr Drąg <piotrdrag@gmail.com>
+Rafael Fontenelle <rafaelff@gnome.org>
+Sabri Ünal <libreajans@gmail.com>
+Seong-ho Cho <shcho@gnome.org>
+
+3.33.90 - Aug 14, 2019
+======================
+
+Changes since 3.33.3
+
+  - Auto enable boot menu for VMs with a CD/DVD assigned
+  - Modernize the unnatended installation code
+  - Prefer initrd over disk as injection method
+  - Various Flatpak/CI build fixes
+  - Print '-h' as the help commandline option (instead of -?)
+  - Wrap size and DnD overlays in OSD for better readability
+  - Added/updated/fixed translations:
+    - Spanish
+    - Brazilian Portuguese
+    - Romanian
+    - German
+    - Swedish
+    - Indonesian
+    - Lithuanian
+    - Catalan
+    - Basque
+
+All contributors to this release:
+
+Anders Jonsson <anders.jonsson@norsjovallen.se>
+Asier Sarasua Garmendia <asier.sarasua@gmail.com>
+Aurimas Černius <aurisc4@gmail.com>
+Daniel Mustieles <daniel.mustieles@gmail.com>
+Fabiano Fidêncio <fidencio@redhat.com>
+Felipe Borges <felipeborges@gnome.org>
+Florentina Mușat <florentina.musat.28@gmail.com>
+Jordi Mas <jmas@softcatala.org>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Piotr Drąg <piotrdrag@gmail.com>
+Rafael Fontenelle <rafaelff@gnome.org>
+Tim Sabsch <tim@sabsch.com>
+
+3.33.3 - Jul 29, 2019
+=====================
+
+Changes since 3.33.2
+
+  - Split new box assistant into two (remote and virtual machines)
+  - Use 3.32 Sdk and Runtime for CI
+  - Drop option to Share Clipboard (now it is always shared)
+  - Add tooltips for media entries in the assistant
+  - Added/updated/fixed translations:
+    - German
+    - Norwegian Bokmål
+    - Basque
+
+All contributors to this release:
+
+Asier Sarasua Garmendia <asier.sarasua@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Kjartan Maraas <kmaraas@gnome.org>
+Mayank Mandava <mayank.mandava@afterpay.com>
+Tim Sabsch <tim@sabsch.com>
+
+3.33.2 - Jul 02, 2019
+=====================
+
+Changes since 3.33.1
+
+  - Add 3D acceleration option to VM Properties dialog
+  - Convert collection switcher to GtkRadioButtons to avoid multi-selection
+  - Stop enabling virtio-gpu by default to new installs (make it opt-in)
+  - Use spice_main_channel_file_copy_async instead of deprecated API
+  - Pass username and port to openssh while connecting
+  - Take screenshots with Gtk, instead of delegating to the display widget
+  - Don't duplicate Recommended Downloads in the "Show All" list
+  - Added/updated/fixed translations:
+    - Spanish
+    - Indonesian
+    - Hungarian
+    - Finnish
+    - Friulian
+    - Greek
+    - Dutch
+    - Croatian
+    - Brazilian Portuguese
+    - Swedish
+
+All contributors to this release:
+
+Anders Jonsson <anders.jonsson@norsjovallen.se>
+Balázs Meskó <meskobalazs@fedoraproject.org>
+Daniel Mustieles <daniel.mustieles@gmail.com>
+Daniel Ostrowski <daniel.j.ostrowski@gmail.com>
+Efstathios Iosifidis <eiosifidis@gnome.org>
+Fabio Tomat <f.t.public@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Goran Vidović <trebelnik2@gmail.com>
+Jiri Grönroos <jiri.gronroos@iki.fi>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Nathan Follens <nfollens@gnome.org>
+Rafael Fontenelle <rafaelff@gnome.org>
+Rodrigo Lledó <rodhos92@gmail.com>
+
+3.33.1 - May 17, 2019
+=====================
+
+Changes since 3.32.1
+
+  - Drop oVirt support
+  - Add missing oxford comma to wizard-source
+  - Use GtkFileChooserNative for the CD/DVD chooser
+  - Don't steal input from username entry in express installs
+  - Fix "Download an OS" search issue with modifier keys
+  - Rename pango attribute incorrectly localized
+  - Add CentOS logo
+  - Added/updated/fixed translations:
+    - Spanish
+    - Indonesian
+    - Friulian
+    - Czech
+
+All contributors to this release:
+
+AsciiWolf <mail@asciiwolf.com>
+Daniel Davies <silicon.octopus@gmail.com>
+Daniel Mustieles <daniel.mustieles@gmail.com>
+Daniel Rusek <mail@asciiwolf.com>
+Fabio Tomat <f.t.public@gmail.com>
+Fabiano Fidêncio <fidencio@redhat.com>
+Felipe Borges <felipeborges@gnome.org>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Piotr Drąg <piotrdrag@gmail.com>
+
 3.32.1 - May 09, 2019
 =====================
 

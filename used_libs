@@ -8,14 +8,12 @@ libgdk_pixbuf-2.0.so.0
 libgio-2.0.so.0
 libglib-2.0.so.0
 libgobject-2.0.so.0
-libgovirt.so.2
 libgtk-3.so.0
 libgtk-vnc-2.0.so.0
 libgudev-1.0.so.0
 libosinfo-1.0.so.0
 libpango-1.0.so.0
 libpthread.so.0
-librest-0.7.so.0
 libsecret-1.so.0
 libsoup-2.4.so.1
 libspice-client-glib-2.0.so.8
