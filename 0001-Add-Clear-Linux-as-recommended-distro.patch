@@ -1,0 +1,24 @@
+From 5ca89842a99c30d184d9817b40c87acbfbc454b1 Mon Sep 17 00:00:00 2001
+From: Auke Kok <auke-jan.h.kok@intel.com>
+Date: Thu, 30 Jan 2020 12:09:59 -0800
+Subject: [PATCH] Add Clear Linux as recommended distro.
+
+---
+ data/recommended-downloads.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/recommended-downloads.xml b/data/recommended-downloads.xml
+index 827da8e..3f3c186 100644
+--- a/data/recommended-downloads.xml
++++ b/data/recommended-downloads.xml
+@@ -9,6 +9,7 @@
+   available.
+  -->
+ <list>
++  <os_id>http://clearlinux.org/clearlinux/rolling</os_id>
+   <os_id>http://redhat.com/rhel/8.1</os_id>
+   <os_id>http://fedoraproject.org/fedora/31</os_id>
+   <os_id>http://fedoraproject.org/silverblue/31</os_id>
+-- 
+2.25.0
+

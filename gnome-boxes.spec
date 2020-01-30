@@ -4,10 +4,10 @@
 #
 Name     : gnome-boxes
 Version  : 3.34.3
-Release  : 7
+Release  : 8
 URL      : https://download.gnome.org/sources/gnome-boxes/3.34/gnome-boxes-3.34.3.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/3.34/gnome-boxes-3.34.3.tar.xz
-Summary  : Simple GNOME application to access remote or virtual systems
+Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
 Group    : Development/Tools
 License  : CC-BY-2.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
 Requires: gnome-boxes-bin = %{version}-%{release}
@@ -27,6 +27,7 @@ BuildRequires : libosinfo
 BuildRequires : libsoup-dev
 BuildRequires : libusb-dev
 BuildRequires : osinfo-db-tools
+BuildRequires : pkgconfig(govirt-1.0)
 BuildRequires : pkgconfig(gtk-vnc-2.0)
 BuildRequires : pkgconfig(gudev-1.0)
 BuildRequires : pkgconfig(libarchive)
@@ -35,6 +36,7 @@ BuildRequires : pkgconfig(libsecret-1)
 BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(libusb-1.0)
 BuildRequires : pkgconfig(libvirt-gconfig-1.0)
+BuildRequires : pkgconfig(spice-client-gtk-3.0)
 BuildRequires : pkgconfig(tracker-sparql-2.0)
 BuildRequires : pkgconfig(vte-2.91)
 BuildRequires : pkgconfig(webkit2gtk-4.0)
@@ -43,13 +45,11 @@ BuildRequires : spice-gtk
 BuildRequires : spice-gtk-dev
 BuildRequires : vte-dev
 BuildRequires : webkitgtk-dev
+Patch1: 0001-Add-Clear-Linux-as-recommended-distro.patch
 
 %description
-Boxes has acquired explicit permission from trademark owners for the usage and
-shipment (though we don't ship them but rather download them on demand) of their
-logos[1][3]. Please note that this permission does not extend to any derivate
-work but only applies to Boxes for the very specific purpose of identifying the
-products in question.
+# This is the directory where we put upstream vapi bindings when they
+# are outdated and we need a version with additional fixes.
 
 %package bin
 Summary: bin components for the gnome-boxes package.
@@ -77,7 +77,6 @@ Requires: gnome-boxes-lib = %{version}-%{release}
 Requires: gnome-boxes-bin = %{version}-%{release}
 Requires: gnome-boxes-data = %{version}-%{release}
 Provides: gnome-boxes-devel = %{version}-%{release}
-Requires: gnome-boxes = %{version}-%{release}
 Requires: gnome-boxes = %{version}-%{release}
 
 %description dev
@@ -131,14 +130,14 @@ locales components for the gnome-boxes package.
 %prep
 %setup -q -n gnome-boxes-3.34.3
 cd %{_builddir}/gnome-boxes-3.34.3
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578417190
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1580415187
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
