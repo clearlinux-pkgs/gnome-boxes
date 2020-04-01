@@ -1,10 +1,9 @@
-3.34.3
+3.36.2
 appstream-glib
 libarchive-dev
 libgudev-dev
 libsoup-dev
 libusb-dev
-pkgconfig(govirt-1.0)
 pkgconfig(gtk-vnc-2.0)
 pkgconfig(gudev-1.0)
 pkgconfig(libarchive)
@@ -13,7 +12,6 @@ pkgconfig(libsecret-1)
 pkgconfig(libsoup-2.4)
 pkgconfig(libusb-1.0)
 pkgconfig(libvirt-gconfig-1.0)
-pkgconfig(spice-client-gtk-3.0)
 pkgconfig(tracker-sparql-2.0)
 pkgconfig(vte-2.91)
 pkgconfig(webkit2gtk-4.0)

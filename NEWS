@@ -1,44 +1,279 @@
-3.34.3 - Jan 06, 2020
+3.36.2 - Mar 30, 2020
 =====================
 
-Changes since 3.34.2
+Changes since 3.36.1
 
-  - Fix crash when input-source gsetting is not available
-  - Enable authentication retrial in VNC
-  - Don't use q35 machines with unknown OSes
-  - Bundle VTE in Flatpak
+  - Pass VIR_DOMAIN_UNDEFINE_NVRAM while undefining VM
+  - Fix crash when recommended-downloads are less than the three
+  - Various warning supressed
   - Added/updated/fixed translations:
-    - Malay
-    - Chinese (Taiwan)
-    - Occitan
+    - Japanese
+    - Serbian
+    - Catalan
 
 All contributors to this release:
 
-Cédric Valmary <cvalmary@yahoo.fr>
-Fabiano Fidêncio <fabiano@fidencio.org>
 Felipe Borges <felipeborges@gnome.org>
-Isaque Galdino <igaldino@gmail.com>
+Jordi Mas <jmas@softcatala.org>
+Марко Костић <marko.m.kostic@gmail.com>
+Ryuta Fujii <translation@sicklylife.jp>
+Sergio Costas <raster@rastersoft.com>
+
+3.36.1 - Mar 17, 2020
+=====================
+
+Changes since 3.36.0
+
+  - Allow "spice://" addresses in Remote Connections assistant
+  - Only set firmware when it's EFI
+  - Fix VM clonning for installed medias
+  - Added/updated/fixed translations:
+    - Catalan
+    - Indonesian
+    - Italian
+    - German
+    - Czech
+    - Romanian
+    - Dutch
+
+All contributors to this release:
+
+Andika Triwidada <atriwidada@gnome.org>
+Daniel Șerbănescu <daniel@serbanescu.dk>
+Felipe Borges <felipeborges@gnome.org>
+Jordi Mas <jmas@softcatala.org>
+Marek Černocký <marek@manet.cz>
+Milo Casagrande <milo@milo.name>
+Nathan Follens <nfollens@gnome.org>
+Tim Sabsch <tim@sabsch.com>
+
+3.36.0 - Mar 06, 2020
+=====================
+
+Changes since 3.35.91
+
+  - Added/updated/fixed translations:
+    - Ukrainian
+    - Italian
+    - Norwegian Bokmål
+
+All contributors to this release:
+
+Daniel Korostil <ted.korostiled@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Kjartan Maraas <kmaraas@gnome.org>
+Milo Casagrande <milo@milo.name>
+
+3.35.91 - Mar 02, 2020
+======================
+
+Changes since 3.35.90
+
+  - Make it easier to tell download rows apart (tooltip)
+  - Remove Ctrl+F1 from keyboard shortcuts page
+  - Stop deleting faulty VMs automatically
+  - Only add CDROM device if backing file/media exists
+  - Fix check for virtualization capabilities in host
+  - Added/updated/fixed translations:
+    - Slovak
+    - Spanish
+    - Catalan
+    - Indonesian
+    - Swedish
+    - Turkish
+    - Brazilian Portuguese
+    - Lithuanian
+    - British English
+    - Japanese
+    - Basque
+    - Finnish
+    - Galician
+    - Persian
+    - Hungarian
+    - Greek
+    - French
+    - Korean
+    - Danish
+    - Friulian
+    - Polish
+    - Croatian
+
+All contributors to this release:
+
+Alan Mortensen <alanmortensen.am@gmail.com>
+Anders Jonsson <anders.jonsson@norsjovallen.se>
+Asier Sarasua Garmendia <asier.sarasua@gmail.com>
+Aurimas Černius <aurisc4@gmail.com>
+Balázs Meskó <mesko.balazs@fsf.hu>
+Balázs Úr <balazs@urbalazs.hu>
+Bruce Cowan <bruce@bcowan.me.uk>
+Charles Monzat <charles.monzat@free.fr>
+Christophe Fergeau <cfergeau@redhat.com>
+Danial Behzadi <dani.behzi@ubuntu.com>
+Daniel Mustieles <daniel.mustieles@gmail.com>
+Dušan Kazik <prescott66@gmail.com>
+Efstathios Iosifidis <eiosifidis@gnome.org>
+Emin Tufan Çetin <etcetin@gmail.com>
+Fabio Tomat <f.t.public@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Fran Dieguez <frandieguez@gnome.org>
+Goran Vidović <trebelnik2@gmail.com>
+Guillaume Bernard <associations@guillaume-bernard.fr>
+Jiri Grönroos <jiri.gronroos@iki.fi>
+Jordi Mas <jmas@softcatala.org>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Piotr Drąg <piotrdrag@gmail.com>
+Rafael Fontenelle <rafaelff@gnome.org>
+Ryuta Fujii <translation@sicklylife.jp>
+Sabri Ünal <libreajans@gmail.com>
+Seong-ho Cho <shcho@gnome.org>
+
+3.35.90 - Feb 03, 2020
+======================
+
+Changes since 3.35.2
+
+  - Draw a pie chart to indicate progress in downloads hub
+  - Pop up downloads hub when a new download is added
+  - Launch installation when there's only one download
+  - Cleanup downloads list after download is complete
+  - Don't use q35 machine profile with unknown OSes
+  - Introduce the Welcome Tutorial dialog
+  - Fix VNC authentication retrials
+  - Offer "Read only" option in VNC connections
+  - Allow to clone VMs only when they aren't running
+  - Drop system libvirt importer
+  - Allow installed disks/images to exist anywhere in $HOME
+    (instead of importing into Boxes' internal storage)
+  - Update keyboard shortcuts
+  - Make the search provider work for Flatpak installations
+  - Allow users to change the vCPU count
+  - Added/updated/fixed translations:
+    - Spanish
+    - Occitan
+    - Chinese (Taiwan)
+    - Greek
+    - Friulian
+    - Galician
+    - Indonesian
+    - Japanese
+    - Croatian
+    - Catalan
+    - Slovak
+    - Brazilian Portuguese
+    - Finnish
+    - Malay
+    - Turkish
+    - Swedish
+    - Lithuanian
+
+Dependencies changed:
+
+  - libosinfo >= 1.7
+  - libvirt-glib >= 3.0
+
+All contributors to this release:
+
+Anders Jonsson <anders.jonsson@norsjovallen.se>
+Andika Triwidada <atriwidada@gnome.org>
+Aurimas Černius <aurisc4@gmail.com>
+Cédric Valmary <cvalmary@yahoo.fr>
+Daniel Mustieles <daniel.mustieles@gmail.com>
+Dušan Kazik <prescott66@gmail.com>
+Efstathios Iosifidis <eiosifidis@gnome.org>
+Fabiano Fidêncio <fidencio@redhat.com>
+Fabio Tomat <f.t.public@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Fran Dieguez <frandieguez@gnome.org>
+Goran Vidović <trebelnik2@gmail.com>
+Jiri Grönroos <jiri.gronroos@iki.fi>
 Jordan Petridis <jpetridis@gnome.org>
+Jordi Mas <jmas@softcatala.org>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Piotr Drąg <piotrdrag@gmail.com>
+Rafael Fontenelle <rafaelff@gnome.org>
+Ryuta Fujii <translation@sicklylife.jp>
+Sabri Ünal <libreajans@gmail.com>
 Umarzuki Bin Mochlis Moktar <umarzuki@gmail.com>
 Yi-Jyun Pan <pan93412@gmail.com>
 
-3.34.2 - Nov 23, 2019
+3.35.2 - Nov 25, 2019
+=====================
+
+Changes since 3.35.1
+
+  - Introduce the new VM Assistant and Downloads manager (popover)
+  - Fallback to host's time when RTC is not available in guest
+  - Add 'Development' and 'Emulator' categories in desktop file
+  - Check for null results in media lists
+  - Recommend latest RHEL/Fedora/Ubuntu
+  - Fix build with Vala master
+  - Various CI fixes
+  - Added/updated/fixed translations:
+    - Indonesian
+    - Czech
+    - Spanish
+    - Friulian
+    - Basque
+
+Dependencies changed:
+
+  - meson >= 0.50
+
+All contributos to this release:
+
+Andika Triwidada <atriwidada@gnome.org>
+Asier Sarasua Garmendia <asier.sarasua@gmail.com>
+Daniel Mustieles <daniel.mustieles@gmail.com>
+Diego Escalante Urrelo <diegoe@gnome.org>
+Dor Askayo <dor.askayo@gmail.com>
+Efstathios Iosifidis <eiosifidis@gnome.org>
+Fabio Tomat <f.t.public@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Gaurav Agrawal <agrawalgaurav1999@gmail.com>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Marek Černocký <marek@manet.cz>
+Michael Catanzaro <mcatanzaro@gnome.org>
+
+3.35.1 - Oct 14, 2019
 =====================
 
 Changes since 3.34.1
 
-  - Fallback to host's time when RTC is not available in guest
-  - Add 'Development' and 'Emulator' categories in desktop file
-  - Recommend latest RHEL/Fedora/Ubuntu
-  - Fix build with Vala master
-  - Various CI fixes
+  - Round user avatar in the wizard
+  - Use bold text heading in the Properties dialog
+  - Various Flatpak/CI/Nightly fixes:
+    - Use the nightly icon
+    - Drop the "(Development)" desktop file name prefix
+    - Simplify .gitlab-ci file
+    - Publish nightly Flatpaks from CI
+    - Split Fedora CI build test on its own stage
+    - Grant access to system bus services such as:
+      "org.freedesktop.timedate1", "org.freedesktop.secrets",
+      and "org.freedesktop.AccountsService"
+    - Build spice-gtk and Tracker with "meson"
+    - Update to Qemu 4.1
+    - Drop bundled libarchive and openssh
+  - Added/updated/fixed translations:
+      - Spanish
+      - Danish
+      - Lithuanian
+      - Japanese
+      - Slovak
+      - Serbian
 
 All contributors to this release:
 
+Ask Hjorth Larsen <asklarsen@gmail.com>
+Aurimas Černius <aurisc4@gmail.com>
+Daniel Mustieles <daniel.mustieles@gmail.com>
 Dor Askayo <dor.askayo@gmail.com>
+Dušan Kazik <prescott66@gmail.com>
+Fabiano Fidêncio <fidencio@redhat.com>
 Felipe Borges <felipeborges@gnome.org>
-Gaurav Agrawal <agrawalgaurav1999@gmail.com>
-Michael Catanzaro <mcatanzaro@gnome.org>
+Марко Костић <marko.m.kostic@gmail.com>
+Ryuta Fujii <translation@sicklylife.jp>
+Srestha Srivastava <sresthasrivastava.ss@gmail.com>
 
 3.34.1 - Oct 07, 2019
 =====================
