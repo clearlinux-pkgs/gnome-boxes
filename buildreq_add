@@ -1,4 +1,11 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-spice-gtk-dev
+appstream-glib
+libarchive-dev
+libgudev-dev
+libsoup-dev
+libusb-dev
 spice-gtk
+spice-gtk-dev
+vte-dev
+webkitgtk-dev

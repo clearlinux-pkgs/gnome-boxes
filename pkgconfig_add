@@ -1,2 +1,14 @@
 # This file contains additional pkgconfig build requirements that did
 # not get picked up automatically. One name per line, no whitespace.
+gtk-vnc-2.0
+gudev-1.0
+libarchive
+libosinfo-1.0
+libsecret-1
+libsoup-2.4
+libusb-1.0
+libvirt-gconfig-1.0
+tracker-sparql-2.0
+vte-2.91
+webkit2gtk-4.0
+winpr2
