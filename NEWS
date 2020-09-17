@@ -1,141 +1,226 @@
-3.36.6 - Aug 06, 2020
+3.38.0 - Sep 11, 2020
 =====================
 
-Changes since 3.36.5
+Changes since 3.37.91
 
-  - Restore support to download from URI in the VM creation assistant
-  - Update recommended downloads for new OS releases
-  - Various improvements on the machine display management
-  - Account for offset of event_box child when relaying display events
-  - Only downscale SPICE displays to prevent undersired upscaling
-  - Update gtk-frdp to include recent RDP authentication fixes
   - Added/updated/fixed translations:
+    - Portuguese
+    - Italian
+    - Friulian
+
+All contributors to this release:
+
+Fabio Tomat <f.t.public@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Juliano Camargo <julianosc@protonmail.com>
+Milo Casagrande <milo@milo.name>
+
+3.37.91 - Sep 07, 2020
+======================
+
+Changes since 3.37.90
+
+  - Only show Snapshots tab when it is supported (not supported for EFI guests)
+  - Add URL for GNOME Nightly OS ISO image
+  - Various fixes on the image detection for the GNOME Nightly OS images
+  - Added/updated/fixed translations:
+    - Greek
+    - Ukrainian
+    - Catalan
+    - Basque
+    - Brazilian Portuguese
+    - Indonesian
+    - Turkish
+    - French
+    - Romanian
+    - Japanese
+    - Galician
+    - Kazakh
+    - Finnish
+    - Swedish
+    - Croatian
+    - Dutch
+    - Chinese (China)
+    - Polish
+    - Lithuanian
+    - Persian
+    - Slovenian
+    - Friulian
+    - Korean
+    - Slovak
+    - German
+    - Hungarian
+    - Serbian
+    - Czech
+    - Danish
+
+All contributors to this release:
+
+Abderrahim Kitouni <akitouni@gnome.org>
+Alan Mortensen <alanmortensen.am@gmail.com>
+Alexandre Franke <afranke@gnome.org>
+Anders Jonsson <anders.jonsson@norsjovallen.se>
+Asier Sarasua Garmendia <asiersarasua@ni.eus>
+Aurimas Černius <aurisc4@gmail.com>
+Balázs Meskó <meskobalazs@mailbox.org>
+Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Boyuan Yang <073plan@gmail.com>
+Charles Monzat <charles.monzat@free.fr>
+Danial Behzadi <dani.behzi@ubuntu.com>
+Dušan Kazik <prescott66@gmail.com>
+Efstathios Iosifidis <eiosifidis@gnome.org>
+Emin Tufan Çetin <etcetin@gmail.com>
+Fabio Tomat <f.t.public@gmail.com>
+Felipe Borges <felipeborges@gnome.org>
+Florentina Mușat <florentina.musat.28@gmail.com>
+Fran Dieguez <frandieguez@gnome.org>
+Goran Vidović <trebelnik2@gmail.com>
+Hannie Dumoleyn <hannie@ubuntu-nl.org>
+Jiri Grönroos <jiri.gronroos@iki.fi>
+Jordan Petridis <jpetridis@gnome.org>
+Jordi Mas <jmas@softcatala.org>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Марко Костић <marko.m.kostic@gmail.com>
+Marek Černocký <marek@manet.cz>
+Mario Blättermann <mario.blaettermann@gmail.com>
+Matej Urbančič <mateju@svn.gnome.org>
+Piotr Drąg <piotrdrag@gmail.com>
+Rafael Fontenelle <rafaelff@gnome.org>
+Seong-ho Cho <shcho@gnome.org>
+Valentin David <valentin.david@codethink.co.uk>
+Yuri Chornoivan <yurchor@ukr.net>
+Yuki Okushi <huyuumi.dev@gmail.com>
+
+3.37.90 - Aug 07, 2020
+======================
+
+Changes since 3.37.1
+
+  - Only downscale SPICE displays to avoid blurred upscaled displays
+  - Fix actions popover placement
+  - Account for offset of outer widgets while passing events to display
+  - Prevent displays from overlapping each other
+  - Let users pick the OS from a list if the OS is unknown
+  - Special case the GNOME OS images
+  - Add editor for libvirt VM configuration
+  - Added/updated/fixed translations:
+    - Chinese (China)
+    - Ukrainian
     - Slovenian
     - Kazakh
-    - Ukrainian
-
-All contributors to this release:
-
-Baurzhan Muftakhidinov <baurthefirst@gmail.com>
-Felipe Borges <felipeborges@gnome.org>
-Jason Gerecke <killertofu@gmail.com>
-Matej Urbančič <mateju@svn.gnome.org>
-Yuri Chornoivan <yurchor@ukr.net>
-
-3.36.5 - Jun 11, 2020
-=====================
-
-Changes since 3.36.4
-
-  - Limit Notification message from expanding out of the window
-  - Update sensitivity of "Send File" option when user agent is connected
-  - Fix misplacement of popover when performing an express-installation
-  - Disable some shortcuts in display mode that interfer with the guest
-  - Pass "wget" as user-agent in SoupSession calls
-  - Fix VM creation cancellation issues in the machine creation Assistant
-  - Various Flatpak build fixes to cope with gcc 10
-  - Disable creation of VMs with EFI firmware
-
-All contributors to this release:
-
-Felipe Borges <felipeborges@gnome.org>
-
-3.36.4 - May 25, 2020
-=====================
-
-Changes since 3.36.3
-
-  - Fix crash when input-source is not available
-  - Include rolling release OSes in "Download an OS"
-  - Offer newest releases of recommended downloads
-  - Fix drag and drop issue in file sharing
-  - Grab focus for password field when showing an authentication dialog
-  - Added/updated/fixed translations:
-    - Slovak
+    - Friulian
+    - Lithuanian
+    - Brazilian Portuguese
     - Catalan
-
-All contributors to this release:
-
-Dušan Kazik <prescott66@gmail.com>
-Felipe Borges <felipeborges@gnome.org>
-Isaque Galdino <igaldino@gmail.com>
-Jordi Mas <jmas@softcatala.org>
-Manuel Wassermann <manuel.wassermann97@gmail.com>
-
-3.36.3 - Apr 20, 2020
-=====================
-
-Changes since 3.36.2
-
-  - Set the "No KVM Infobar" visibility correctly
-  - Build FreeRDP with OPENH264=ON on Flatpak
-  - Only store auth credentials when connection succeeds
-  - Fix authentication dialog not popping up for retrials
-  - Apply disk size changes in the VM creation assistant
-  - Don't recreate GraphicsSpice device on startup
-  - Added/updated/fixed translations:
-    - Chinese (Taiwan)
-    - Japanese
-    - Italian
+    - Romanian
+    - Swedish
     - Indonesian
+    - Turkish
+
+Dependencies changed:
+  - gtksourceview-4 (NEW)
 
 All contributors to this release:
 
-Cheng-Chia Tseng <pswo10680@gmail.com>
-Federico Bruni <fede@inventati.org>
+Anders Jonsson <anders.jonsson@norsjovallen.se>
+Aurimas Černius <aurisc4@gmail.com>
+Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Emin Tufan Çetin <etcetin@gmail.com>
+Fabio Tomat <f.t.public@gmail.com>
 Felipe Borges <felipeborges@gnome.org>
-Kukuh Syafaat <kukuhsyafaat@gnome.org>
-Manuel Wassermann <manuel.wassermann97@gmail.com>
-Ryuta Fujii <translation@sicklylife.jp>
-
-3.36.2 - Mar 30, 2020
-=====================
-
-Changes since 3.36.1
-
-  - Pass VIR_DOMAIN_UNDEFINE_NVRAM while undefining VM
-  - Fix crash when recommended-downloads are less than the three
-  - Various warning supressed
-  - Added/updated/fixed translations:
-    - Japanese
-    - Serbian
-    - Catalan
-
-All contributors to this release:
-
-Felipe Borges <felipeborges@gnome.org>
+Florentina Mușat <florentina.musat.28@gmail.com>
+Jason Gerecke <killertofu@gmail.com>
+Jordan Petridis <jpetridis@gnome.org>
 Jordi Mas <jmas@softcatala.org>
-Марко Костић <marko.m.kostic@gmail.com>
-Ryuta Fujii <translation@sicklylife.jp>
-Sergio Costas <raster@rastersoft.com>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Matej Urbančič <mateju@svn.gnome.org>
+Monika Grabovska <monika.grabovska@gmail.com>
+Rafael Fontenelle <rafaelff@gnome.org>
+tuhaihe <1132321739qq@gmail.com>
+Yuri Chornoivan <yurchor@ukr.net>
+王滋涵 Zephyr Wang <wi24rd@fedoraproject.org>
 
-3.36.1 - Mar 17, 2020
+3.37.1 - Jun 08, 2020
 =====================
 
 Changes since 3.36.0
 
-  - Allow "spice://" addresses in Remote Connections assistant
-  - Only set firmware when it's EFI
-  - Fix VM clonning for installed medias
+  - Update Flatpak dependencies
+  - Force "wget" as user-agent in SoupSession
+  - Various visual polishings of the Welcome Tutorial dialog
+  - Allow "spice:///" addresses in remote connection assistant
+  - Drop the view filter switcher
+  - Offer newest releases of OSes in recommended downloads list
+  - Grab focus for password fields in AuthNotification
+  - Fix various build warnings with newer Vala versions
+  - Fix DnD destination widget interfering with the drop target
+  - Include rolling releases as Downloadable OSes
+  - Fix crash when input-source is not available
+  - Don't recreate GraphicsSpice object at guest startup
+  - Apply deferred property changes as user progresses on the Assistant
+  - Move the download popover button left of the search button
+  - Account for Medias without URLs in serilize_os_title
+  - Sanitize our GSource handling of notifications
+  - Don't crash for outdated osinfo db
+  - Add Manjaro and NixOS logos
+  - Various gcc 10 build fixes for Flatpak
+  - Disable creation of VMs with EFI firmware (in favor of Snapshot support)
+  - Do the cancellation of VM creation properly
   - Added/updated/fixed translations:
-    - Catalan
-    - Indonesian
-    - Italian
-    - German
+    - Dutch
     - Czech
     - Romanian
-    - Dutch
+    - German
+    - Italian
+    - Indonesian
+    - Catalan
+    - Japanese
+    - Serbian
+    - Chinese (Taiwan)
+    - Ukrainian
+    - Chinese (China)
+    - Persian
+    - Spanish
+    - Turkish
+    - Slovak
+    - Esperanto
+    - Greek
+
+Dependencies changed:
+
+  - Added libhandy
 
 All contributors to this release:
 
+Alexander Mikhaylenko <alexm@gnome.org>
 Andika Triwidada <atriwidada@gnome.org>
+Carmen Bianca BAKKER <carmen@carmenbianca.eu>
+Cheng-Chia Tseng <pswo10680@gmail.com>
+corecontingency <ccontingency@gmail.com>
+Danial Behzadi <dani.behzi@ubuntu.com>
+Daniel Mustieles <daniel.mustieles@gmail.com>
 Daniel Șerbănescu <daniel@serbanescu.dk>
+Dušan Kazik <prescott66@gmail.com>
+Dz Chen <wsxy162@gmail.com>
+Efstathios Iosifidis <eiosifidis@gnome.org>
+Emin Tufan Çetin <etcetin@gmail.com>
+Fabiano Fidêncio <fidencio@redhat.com>
+Federico Bruni <fede@inventati.org>
 Felipe Borges <felipeborges@gnome.org>
+Florentina Mușat <emryslokadottir@gmail.com>
+Isaque Galdino <igaldino@gmail.com>
 Jordi Mas <jmas@softcatala.org>
+Kukuh Syafaat <kukuhsyafaat@gnome.org>
+Manuel Wassermann <manuel.wassermann97@gmail.com>
 Marek Černocký <marek@manet.cz>
+Марко Костић <marko.m.kostic@gmail.com>
 Milo Casagrande <milo@milo.name>
 Nathan Follens <nfollens@gnome.org>
+Piotr Drąg <piotrdrag@gmail.com>
+Ryuta Fujii <translation@sicklylife.jp>
+Sergio Costas <raster@rastersoft.com>
 Tim Sabsch <tim@sabsch.com>
+Yuri Chornoivan <yurchor@ukr.net>
 
 3.36.0 - Mar 06, 2020
 =====================

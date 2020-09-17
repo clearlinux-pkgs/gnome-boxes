@@ -1,0 +1,5 @@
+3.38.0
+gtksourceview-dev
+libhandy-dev
+pkgconfig(gtksourceview-4)
+pkgconfig(libhandy-0.0)
