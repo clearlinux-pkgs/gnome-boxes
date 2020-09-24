@@ -4,7 +4,7 @@
 #
 Name     : gnome-boxes
 Version  : 3.38.0
-Release  : 14
+Release  : 15
 URL      : https://download.gnome.org/sources/gnome-boxes/3.38/gnome-boxes-3.38.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/3.38/gnome-boxes-3.38.0.tar.xz
 Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
