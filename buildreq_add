@@ -1,10 +1,14 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
 appstream-glib
+gtksourceview-dev
 libarchive-dev
 libgudev-dev
+libhandy-dev
 libsoup-dev
 libusb-dev
+pkgconfig(gtksourceview-4)
+pkgconfig(libhandy-0.0)
 spice-gtk
 spice-gtk-dev
 vte-dev

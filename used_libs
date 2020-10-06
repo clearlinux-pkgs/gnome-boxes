@@ -1,4 +1,5 @@
 libarchive.so.13
+libatk-1.0.so.0
 libc.so.6
 libcairo.so.2
 libfreerdp2.so.2
@@ -12,7 +13,6 @@ libgtk-3.so.0
 libgtk-vnc-2.0.so.0
 libgtksourceview-4.so.0
 libgudev-1.0.so.0
-libhandy-0.0.so.0
 libm.so.6
 libosinfo-1.0.so.0
 libpango-1.0.so.0
@@ -21,7 +21,7 @@ libsecret-1.so.0
 libsoup-2.4.so.1
 libspice-client-glib-2.0.so.8
 libspice-client-gtk-3.0.so.5
-libtracker-sparql-2.0.so.0
+libtracker-sparql-3.0.so.0
 libusb-1.0.so.0
 libvirt-gconfig-1.0.so.0
 libvirt-gobject-1.0.so.0
