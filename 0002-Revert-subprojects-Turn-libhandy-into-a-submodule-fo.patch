@@ -1,0 +1,77 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Patrick McCarty <patrick.mccarty@intel.com>
+Date: Tue, 9 Feb 2021 05:06:42 +0000
+Subject: [PATCH] Revert "subprojects: Turn libhandy into a submodule for
+ non-Flatpak builds"
+
+This reverts commit d43264bae43cd8d0e45d62df7e863b85441fa584.
+
+Fixes the build to use the system-installed version of libhandy-0.0.
+Expect gnome-boxes 40 to use libhandy-1 instead.
+
+Note: I ignored the changes to .gitmodules, since that file is not part
+of the dist tarball.
+
+Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
+---
+ src/meson.build           | 14 +-------------
+ subprojects/libhandy.wrap |  4 ----
+ 2 files changed, 1 insertion(+), 17 deletions(-)
+ delete mode 100644 subprojects/libhandy.wrap
+
+diff --git a/src/meson.build b/src/meson.build
+index 82490288..f38d7d80 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -147,6 +147,7 @@ dependencies = [
+   dependency ('tracker-sparql-3.0'),
+   dependency ('vte-2.91', version: '>= 0.40.2'),
+   dependency ('webkit2gtk-4.0', version: '>= 2.26.0'),
++  dependency ('libhandy-0.0', version: '>= 0.0.11'),
+   cc.find_library('m', required : false),
+   valac.find_library ('gio-2.0-workaround', dirs: vapi_dir),
+   valac.find_library ('linux'),
+@@ -154,7 +155,6 @@ dependencies = [
+   valac.find_library ('spice-client-gtk-3.0'),
+ ]
+ 
+-
+ if get_option('rdp')
+   vala_sources += ['rdp-display.vala']
+ 
+@@ -165,7 +165,6 @@ if get_option('flatpak')
+   vala_args += '--define=FLATPAK'
+ 
+   dependencies += dependency ('govf-0.1')
+-  dependencies += dependency ('libhandy-0.0', version: '>= 0.0.11')
+ 
+   if get_option('rdp')
+     dependencies += dependency ('gtk-frdp-0.1')
+@@ -175,17 +174,6 @@ else
+     dependency ('gudev-1.0', version: '>= 165'),
+   ]
+ 
+-  libhandy = subproject(
+-    'libhandy',
+-    default_options: [
+-      'package_subdir=' + meson.project_name(),
+-      'examples=false',
+-      'glade_catalog=disabled',
+-      'tests=false',
+-    ]
+-  )
+-  dependencies += libhandy.get_variable('libhandy_vapi')
+-
+   if get_option('rdp')
+     gtk_frdp = subproject(
+       'gtk-frdp',
+diff --git a/subprojects/libhandy.wrap b/subprojects/libhandy.wrap
+deleted file mode 100644
+index 5bfca8ba..00000000
+--- a/subprojects/libhandy.wrap
++++ /dev/null
+@@ -1,4 +0,0 @@
+-[wrap-git]
+-directory=libhandy
+-url=https://gitlab.gnome.org/gnome/libhandy.git
+-revision=libhandy-0-0

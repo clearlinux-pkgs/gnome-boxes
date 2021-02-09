@@ -4,7 +4,7 @@
 #
 Name     : gnome-boxes
 Version  : 3.38.2
-Release  : 17
+Release  : 18
 URL      : https://download.gnome.org/sources/gnome-boxes/3.38/gnome-boxes-3.38.2.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/3.38/gnome-boxes-3.38.2.tar.xz
 Summary  : A library full of GTK widgets for mobile phones
@@ -49,6 +49,7 @@ BuildRequires : spice-gtk-dev
 BuildRequires : vte-dev
 BuildRequires : webkitgtk-dev
 Patch1: 0001-Add-Clear-Linux-as-recommended-distro.patch
+Patch2: 0002-Revert-subprojects-Turn-libhandy-into-a-submodule-fo.patch
 
 %description
 # This is the directory where we put upstream vapi bindings when they
@@ -134,13 +135,14 @@ locales components for the gnome-boxes package.
 %setup -q -n gnome-boxes-3.38.2
 cd %{_builddir}/gnome-boxes-3.38.2
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1605900008
+export SOURCE_DATE_EPOCH=1612847638
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -171,10 +173,8 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %defattr(-,root,root,-)
 /usr/lib64/gnome-boxes/girepository-1.0/Govf-0.1.typelib
 /usr/lib64/gnome-boxes/girepository-1.0/GtkFrdp-0.1.typelib
-/usr/lib64/gnome-boxes/girepository-1.0/Handy-0.0.typelib
 /usr/lib64/gnome-boxes/pkgconfig/govf-0.1.pc
 /usr/lib64/gnome-boxes/pkgconfig/gtk-frdp-0.1.pc
-/usr/lib64/gnome-boxes/pkgconfig/libhandy-0.0.pc
 
 %files bin
 %defattr(-,root,root,-)
@@ -188,7 +188,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/share/glib-2.0/schemas/org.gnome.boxes.gschema.xml
 /usr/share/gnome-boxes/gir-1.0/Govf-0.1.gir
 /usr/share/gnome-boxes/gir-1.0/GtkFrdp-0.1.gir
-/usr/share/gnome-boxes/gir-1.0/Handy-0.0.gir
 /usr/share/gnome-boxes/osinfo/os/centos.org/centos-6.0.xml
 /usr/share/gnome-boxes/osinfo/os/centos.org/centos-7.0.xml
 /usr/share/gnome-boxes/osinfo/os/debian.org/debian-4.xml
@@ -214,8 +213,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/share/gnome-boxes/vapi/govf-0.1.vapi
 /usr/share/gnome-boxes/vapi/gtk-frdp-0.1.deps
 /usr/share/gnome-boxes/vapi/gtk-frdp-0.1.vapi
-/usr/share/gnome-boxes/vapi/libhandy-0.0.deps
-/usr/share/gnome-boxes/vapi/libhandy-0.0.vapi
 /usr/share/gnome-shell/search-providers/org.gnome.Boxes.SearchProvider.ini
 /usr/share/icons/hicolor/scalable/apps/org.gnome.Boxes.svg
 /usr/share/icons/hicolor/symbolic/apps/org.gnome.Boxes-symbolic.svg
@@ -230,42 +227,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/gnome-boxes/gtk-frdp/frdp-session.h
 /usr/include/gnome-boxes/gtk-frdp/gtk-frdp-version.h
 /usr/include/gnome-boxes/gtk-frdp/gtk-frdp.h
-/usr/include/gnome-boxes/libhandy-0.0/handy.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-action-row.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-animation.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-arrows.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-column.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-combo-row.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-deprecation-macros.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-dialer-button.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-dialer-cycle-button.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-dialer.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-dialog.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-enum-value-object.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-enums.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-expander-row.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-fold.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-header-bar.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-header-group.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-keypad.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-leaflet.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-list-box.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-main.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-paginator.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-preferences-group.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-preferences-page.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-preferences-row.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-preferences-window.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-search-bar.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-squeezer.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-string-utf8.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-swipe-group.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-swipeable.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-title-bar.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-value-object.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-version.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-view-switcher-bar.h
-/usr/include/gnome-boxes/libhandy-0.0/hdy-view-switcher.h
 
 %files doc
 %defattr(0644,root,root,0755)
@@ -767,8 +728,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %defattr(-,root,root,-)
 /usr/lib64/gnome-boxes/libgovf-0.1.so
 /usr/lib64/gnome-boxes/libgtk-frdp-0.1.so
-/usr/lib64/gnome-boxes/libhandy-0.0.so
-/usr/lib64/gnome-boxes/libhandy-0.0.so.0
 
 %files libexec
 %defattr(-,root,root,-)
