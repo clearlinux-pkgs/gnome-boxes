@@ -8,7 +8,6 @@ libhandy-dev
 libsoup-dev
 libusb-dev
 pkgconfig(gtksourceview-4)
-pkgconfig(libhandy-0.0)
 spice-gtk
 spice-gtk-dev
 vte-dev

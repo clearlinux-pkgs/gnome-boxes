@@ -4,7 +4,7 @@
 #
 Name     : gnome-boxes
 Version  : 40.2
-Release  : 21
+Release  : 22
 URL      : https://download.gnome.org/sources/gnome-boxes/40/gnome-boxes-40.2.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/40/gnome-boxes-40.2.tar.xz
 Summary  : A library full of GTK widgets for mobile phones
@@ -33,7 +33,6 @@ BuildRequires : pkgconfig(gtk-vnc-2.0)
 BuildRequires : pkgconfig(gtksourceview-4)
 BuildRequires : pkgconfig(gudev-1.0)
 BuildRequires : pkgconfig(libarchive)
-BuildRequires : pkgconfig(libhandy-0.0)
 BuildRequires : pkgconfig(libosinfo-1.0)
 BuildRequires : pkgconfig(libsecret-1)
 BuildRequires : pkgconfig(libsoup-2.4)
@@ -140,7 +139,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622831284
+export SOURCE_DATE_EPOCH=1624502931
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
