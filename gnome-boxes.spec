@@ -4,7 +4,7 @@
 #
 Name     : gnome-boxes
 Version  : 41.1
-Release  : 25
+Release  : 26
 URL      : https://download.gnome.org/sources/gnome-boxes/41/gnome-boxes-41.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/41/gnome-boxes-41.1.tar.xz
 Summary  : A library full of GTK widgets for mobile phones
