@@ -8,7 +8,7 @@ Subject: [PATCH] Add Clear Linux as recommended distro.
  1 file changed, 1 insertion(+)
 
 diff --git a/data/recommended-downloads.xml b/data/recommended-downloads.xml
-index dc3de68f..cde982e3 100644
+index 845bfbe..af54f13 100644
 --- a/data/recommended-downloads.xml
 +++ b/data/recommended-downloads.xml
 @@ -9,6 +9,7 @@
@@ -16,6 +16,6 @@ index dc3de68f..cde982e3 100644
   -->
  <list>
 +  <os_id>http://clearlinux.org/clearlinux/rolling</os_id>
-   <os_id>http://redhat.com/rhel/8.4</os_id>
-   <os_id>http://fedoraproject.org/fedora/34</os_id>
-   <os_id>http://fedoraproject.org/silverblue/34</os_id>
+   <os_id>http://redhat.com/rhel/8.5</os_id>
+   <os_id>http://fedoraproject.org/fedora/35</os_id>
+   <os_id>http://fedoraproject.org/silverblue/35</os_id>
