@@ -4,7 +4,7 @@
 #
 Name     : gnome-boxes
 Version  : 42.3
-Release  : 31
+Release  : 32
 URL      : https://download.gnome.org/sources/gnome-boxes/42/gnome-boxes-42.3.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/42/gnome-boxes-42.3.tar.xz
 Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
@@ -21,7 +21,6 @@ Requires: osinfo-db-tools
 BuildRequires : appstream-glib
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
-BuildRequires : gtksourceview-dev
 BuildRequires : libarchive-dev
 BuildRequires : libgudev-dev
 BuildRequires : libhandy-dev
@@ -39,13 +38,15 @@ BuildRequires : pkgconfig(libvirt-gconfig-1.0)
 BuildRequires : pkgconfig(tracker-sparql-2.0)
 BuildRequires : pkgconfig(tracker-sparql-3.0)
 BuildRequires : pkgconfig(vte-2.91)
-BuildRequires : pkgconfig(webkit2gtk-4.0)
+BuildRequires : pkgconfig(webkit2gtk-4.1)
 BuildRequires : pkgconfig(winpr2)
 BuildRequires : spice-gtk
 BuildRequires : spice-gtk-dev
 BuildRequires : vte-dev
-BuildRequires : webkitgtk-dev
 Patch1: 0001-Add-Clear-Linux-as-recommended-distro.patch
+Patch2: 0002-Port-to-libsoup-3.patch
+Patch3: 0003-build-flatpak-Bump-libosinfo-to-1.10.0.patch
+Patch4: 0004-downloader-Disable-network-test-before-download-star.patch
 
 %description
 # This is the directory where we put upstream vapi bindings when they
@@ -131,13 +132,16 @@ locales components for the gnome-boxes package.
 %setup -q -n gnome-boxes-42.3
 cd %{_builddir}/gnome-boxes-42.3
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661798541
+export SOURCE_DATE_EPOCH=1661800515
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -155,10 +159,10 @@ meson test -C builddir --print-errorlogs || :
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/gnome-boxes
-cp %{_builddir}/gnome-boxes-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/ba8966e2473a9969bdcab3dc82274c817cfd98a1 || :
-cp %{_builddir}/gnome-boxes-%{version}/copyright %{buildroot}/usr/share/package-licenses/gnome-boxes/a4c835de9e0708234c05f918157e7b47ac65cde7 || :
-cp %{_builddir}/gnome-boxes-%{version}/subprojects/gtk-frdp/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/a8a12e6867d7ee39c21d9b11a984066099b6fb6b || :
-cp %{_builddir}/gnome-boxes-%{version}/subprojects/libovf-glib/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/3704f4680301a60004b20f94e0b5b8c7ff1484a9 || :
+cp %{_builddir}/gnome-boxes-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/ba8966e2473a9969bdcab3dc82274c817cfd98a1
+cp %{_builddir}/gnome-boxes-%{version}/copyright %{buildroot}/usr/share/package-licenses/gnome-boxes/a4c835de9e0708234c05f918157e7b47ac65cde7
+cp %{_builddir}/gnome-boxes-%{version}/subprojects/gtk-frdp/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/a8a12e6867d7ee39c21d9b11a984066099b6fb6b
+cp %{_builddir}/gnome-boxes-%{version}/subprojects/libovf-glib/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/3704f4680301a60004b20f94e0b5b8c7ff1484a9
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang gnome-boxes
 

@@ -1,0 +1,30 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Borges <felipeborges@gnome.org>
+Date: Tue, 28 Jun 2022 13:36:09 +0200
+Subject: [PATCH] downloader: Disable network test before download starts
+
+We can let the download operation beging and just error out if
+something goes wrong. AFAIK, there's no need to check the connection
+state before doing anything here.
+
+Upstream-Status: Backport
+Reference: https://gitlab.gnome.org/GNOME/gnome-boxes/-/merge_requests/531
+---
+ src/downloader.vala | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/src/downloader.vala b/src/downloader.vala
+index d501423..c79f506 100644
+--- a/src/downloader.vala
++++ b/src/downloader.vala
+@@ -127,10 +127,6 @@ public async File download (File             remote_file,
+ 
+     private async void download_from_http (Download download, Cancellable? cancellable = null) throws GLib.Error {
+         var msg = new Soup.Message ("GET", download.uri);
+-        var connectable = msg.get_remote_address ();
+-        var network_monitor = NetworkMonitor.get_default ();
+-        if (!(yield network_monitor.can_reach_async (connectable)))
+-            throw new Boxes.Error.INVALID ("Failed to connect to '%s'", connectable.to_string());
+         GLib.Error? err = null;
+ 
+         int64 total_num_bytes = 0;

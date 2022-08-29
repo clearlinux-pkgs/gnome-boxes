@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Felipe Borges <felipeborges@gnome.org>
+Date: Tue, 28 Jun 2022 13:31:48 +0200
+Subject: [PATCH] build, flatpak: Bump libosinfo to 1.10.0
+
+This version has been ported to libsoup3.
+
+Upstream-Status: Backport
+Reference: https://gitlab.gnome.org/GNOME/gnome-boxes/-/merge_requests/531
+---
+ src/meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/meson.build b/src/meson.build
+index a9d3c19..b4b5267 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -106,7 +106,7 @@ dependencies = [
+   dependency ('gtk-vnc-2.0', version: '>= 0.4.4'),
+   dependency ('gvncpulse-1.0'),
+   dependency ('libhandy-1', version: '>= 1.5.0'),
+-  dependency ('libosinfo-1.0', version: '>= 1.7.0'),
++  dependency ('libosinfo-1.0', version: '>= 1.10.0'),
+   dependency ('libsecret-1'),
+   dependency ('libsoup-3.0'),
+   dependency ('libusb-1.0', version: '>= 1.0.9'),

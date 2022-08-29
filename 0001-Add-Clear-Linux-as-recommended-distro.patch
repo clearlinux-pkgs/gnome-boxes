@@ -8,9 +8,9 @@ Subject: [PATCH] Add Clear Linux as recommended distro.
  1 file changed, 1 insertion(+)
 
 diff --git a/data/recommended-downloads.xml b/data/recommended-downloads.xml
-index 845bfbe..af54f13 100644
---- gnome-boxes-42.3/data/recommended-downloads.xml~	2022-07-07 10:00:46.000000000 +0000
-+++ gnome-boxes-42.3/data/recommended-downloads.xml	2022-08-29 18:33:56.634527304 +0000
+index 6502791..56554d6 100644
+--- a/data/recommended-downloads.xml
++++ b/data/recommended-downloads.xml
 @@ -9,6 +9,7 @@
    available.
   -->
