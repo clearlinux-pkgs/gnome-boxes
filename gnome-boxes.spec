@@ -4,7 +4,7 @@
 #
 Name     : gnome-boxes
 Version  : 42.3
-Release  : 33
+Release  : 34
 URL      : https://download.gnome.org/sources/gnome-boxes/42/gnome-boxes-42.3.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/42/gnome-boxes-42.3.tar.xz
 Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
@@ -43,9 +43,9 @@ BuildRequires : spice-gtk
 BuildRequires : spice-gtk-dev
 BuildRequires : vte-dev
 Patch1: 0001-Add-Clear-Linux-as-recommended-distro.patch
-Patch2: 0002-Port-to-libsoup-3.patch
-Patch3: 0003-build-flatpak-Bump-libosinfo-to-1.10.0.patch
-Patch4: 0004-downloader-Disable-network-test-before-download-star.patch
+Patch2: backport-Port-to-libsoup-3.patch
+Patch3: backport-build-flatpak-Bump-libosinfo-to-1.10.0.patch
+Patch4: backport-downloader-Disable-network-test-before-download-star.patch
 
 %description
 # This is the directory where we put upstream vapi bindings when they
@@ -140,7 +140,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661800832
+export SOURCE_DATE_EPOCH=1661801436
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "

@@ -1,4 +1,4 @@
 0001-Add-Clear-Linux-as-recommended-distro.patch
-0002-Port-to-libsoup-3.patch
-0003-build-flatpak-Bump-libosinfo-to-1.10.0.patch
-0004-downloader-Disable-network-test-before-download-star.patch
+backport-Port-to-libsoup-3.patch
+backport-build-flatpak-Bump-libosinfo-to-1.10.0.patch
+backport-downloader-Disable-network-test-before-download-star.patch
