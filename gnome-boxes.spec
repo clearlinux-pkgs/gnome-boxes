@@ -4,7 +4,7 @@
 #
 Name     : gnome-boxes
 Version  : 42.3
-Release  : 30
+Release  : 31
 URL      : https://download.gnome.org/sources/gnome-boxes/42/gnome-boxes-42.3.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/42/gnome-boxes-42.3.tar.xz
 Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
@@ -33,7 +33,7 @@ BuildRequires : pkgconfig(gudev-1.0)
 BuildRequires : pkgconfig(libarchive)
 BuildRequires : pkgconfig(libosinfo-1.0)
 BuildRequires : pkgconfig(libsecret-1)
-BuildRequires : pkgconfig(libsoup-2.4)
+BuildRequires : pkgconfig(libsoup-3.0)
 BuildRequires : pkgconfig(libusb-1.0)
 BuildRequires : pkgconfig(libvirt-gconfig-1.0)
 BuildRequires : pkgconfig(tracker-sparql-2.0)
@@ -137,7 +137,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661798216
+export SOURCE_DATE_EPOCH=1661798541
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
