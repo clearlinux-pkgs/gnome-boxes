@@ -4,7 +4,7 @@
 #
 Name     : gnome-boxes
 Version  : 43.0
-Release  : 36
+Release  : 37
 URL      : https://download.gnome.org/sources/gnome-boxes/43/gnome-boxes-43.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/43/gnome-boxes-43.0.tar.xz
 Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
