@@ -1,9 +1,52 @@
-42.3 - 07 Jul, 2022
-===================
+43.0 - 16 Sept, 2022
+====================
+
+Changes since 43.rc
+
+  - Added/updated/fixed translations
+
+43.rc - 05 Sept, 2022
+=====================
+
+Changes since 43.beta
+
+  - Ensure disk creation for cloned virtual machines
+  - Filter search results in the model (GListModel)
+  - Use meson's GNOME module post_install function
+  - Added/updated/fixed translations
+
+43.beta - 09 Aug, 2022
+======================
+
+Changes since 43.alpha
+
+  - Fetch recommended download operating systems from remote address
+  - Revert change that made Boxes honor default system color-scheme
+  - Added/updated/fixed translations
+
+43.alpha - 01 Jul, 2022
+=======================
 
 Changes since 42.2
 
-  - Include subproject directory in the tarball
+  - Save screenshots into ~/Pictures/Screenshots
+  - Rename default development branch to "main"
+  - Rename Devel Flatpak manifest to match Devel app_id
+  - Use our custom logic to draw thumbnails
+  - Honor the default system color-scheme
+  - Update Boxes homepage links to gnomeboxes.org
+  - Drop build option that made possible building without SPICE
+  - Disable network test before download starts
+  - Port to libsoup3
+  - Added/updated/fixed translations
+
+Dependencies changed:
+
+  - libosinfo >= 1.10.0
+  - libsoup3 >= 3.0.0
+  - webkit2gtk-4.1
+  - gtk-vnc (removed)
+  - gtk-frdp (removed)
 
 42.2 - 01 Jul, 2022
 ===================
