@@ -8,14 +8,14 @@ Subject: [PATCH] Add Clear Linux as recommended distro.
  1 file changed, 1 insertion(+)
 
 diff --git a/data/recommended-downloads.xml b/data/recommended-downloads.xml
-index 6502791..56554d6 100644
+index 6db6993..13651b5 100644
 --- a/data/recommended-downloads.xml
 +++ b/data/recommended-downloads.xml
-@@ -9,6 +9,7 @@
-   available.
+@@ -18,6 +18,7 @@
+   See https://gitlab.gnome.org/GNOME/gnome-boxes/-/wikis/recommended-downloads.xml
   -->
  <list>
-+  <os_id>http://clearlinux.org/clearlinux/rolling</os_id>
-   <os_id>http://redhat.com/rhel/</os_id>
-   <os_id>http://rockylinux.org/rocky/</os_id>
-   <os_id>http://fedoraproject.org/fedora/</os_id>
++  <os id="http://clearlinux.org/clearlinux/rolling"/>
+   <os id="http://redhat.com/rhel/"/>
+   <os id="http://rockylinux.org/rocky/"/>
+   <os id="http://fedoraproject.org/fedora/"/>
