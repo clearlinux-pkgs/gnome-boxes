@@ -1,19 +1,41 @@
-43.3 - Feb 14, 2023
+44.0 - Mar 17, 2023
 ===================
 
-Changes since 43.2
+Changes since 44.rc
 
-  - Add OVF to list of supported install media formats
-  - Use mime-type when validating OVA file
+  - Always create SPICE agent channel config
+  - Fix increments in VM creation Storage Limit spin button
+  - Don't fail to parse manually entered storage value on different locales
+  - Added/updated/fixed translations
 
-43.2 - Dec 22, 2022
-===================
+44.rc - Mar 06, 2023
+====================
+
+Changes since 44.beta.1
+
+  - Fix VM renaming issues
+  - Fix errors saving manually edited domain configuration
+  - Fix issues with storage-limit not being set in VM creation
+  - Allow creating VMs without selecting an Osinfo operating system entry
+  - Added/updated/fixed translations
+
+44.beta.1 - Feb 16, 2023
+========================
+
+Changes since 44.beta
+
+  - Update POTFILES.in
+
+44.beta - Feb 14, 2023
+======================
 
 Changes since 43.1
 
-  - Fix wrong key sent for the tty9 shortcut
-  - Fix creating VMs from remote disks
-  - Added/updated/fixed translations
+  - Modernize the VM creation UI
+  - Add new widget to rename VMs
+  - Fix import of raw images
+  - Create new storage volumes with compat=1.1
+  - Update the documentation
 
 43.1 - Oct 25, 2022
 ===================
