@@ -5,7 +5,7 @@
 #
 Name     : gnome-boxes
 Version  : 44.0
-Release  : 42
+Release  : 43
 URL      : https://download.gnome.org/sources/gnome-boxes/44/gnome-boxes-44.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-boxes/44/gnome-boxes-44.0.tar.xz
 Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
@@ -138,7 +138,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679686351
+export SOURCE_DATE_EPOCH=1680026844
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
