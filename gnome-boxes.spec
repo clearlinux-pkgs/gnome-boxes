@@ -4,10 +4,10 @@
 # Using build pattern: meson
 #
 Name     : gnome-boxes
-Version  : 44.1
-Release  : 44
-URL      : https://download.gnome.org/sources/gnome-boxes/44/gnome-boxes-44.1.tar.xz
-Source0  : https://download.gnome.org/sources/gnome-boxes/44/gnome-boxes-44.1.tar.xz
+Version  : 44.2
+Release  : 45
+URL      : https://download.gnome.org/sources/gnome-boxes/44/gnome-boxes-44.2.tar.xz
+Source0  : https://download.gnome.org/sources/gnome-boxes/44/gnome-boxes-44.2.tar.xz
 Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
 Group    : Development/Tools
 License  : CC-BY-2.0 LGPL-2.0 LGPL-2.1
@@ -129,23 +129,28 @@ locales components for the gnome-boxes package.
 
 
 %prep
-%setup -q -n gnome-boxes-44.1
-cd %{_builddir}/gnome-boxes-44.1
+%setup -q -n gnome-boxes-44.2
+cd %{_builddir}/gnome-boxes-44.2
 %patch1 -p1
+pushd ..
+cp -a gnome-boxes-44.2 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680270994
+export SOURCE_DATE_EPOCH=1685462327
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
 ninja -v -C builddir
+CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -O3" CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 " LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddiravx2
+ninja -v -C builddiravx2
 
 %check
 export LANG=C.UTF-8
@@ -159,8 +164,10 @@ mkdir -p %{buildroot}/usr/share/package-licenses/gnome-boxes
 cp %{_builddir}/gnome-boxes-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/ba8966e2473a9969bdcab3dc82274c817cfd98a1 || :
 cp %{_builddir}/gnome-boxes-%{version}/copyright %{buildroot}/usr/share/package-licenses/gnome-boxes/a4c835de9e0708234c05f918157e7b47ac65cde7 || :
 cp %{_builddir}/gnome-boxes-%{version}/subprojects/libovf-glib/COPYING %{buildroot}/usr/share/package-licenses/gnome-boxes/3704f4680301a60004b20f94e0b5b8c7ff1484a9 || :
+DESTDIR=%{buildroot}-v3 ninja -C builddiravx2 install
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang gnome-boxes
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -169,6 +176,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files bin
 %defattr(-,root,root,-)
+/V3/usr/bin/gnome-boxes
 /usr/bin/gnome-boxes
 
 %files data
@@ -825,10 +833,12 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/gnome-boxes/libgovf-0.1.so
 /usr/lib64/gnome-boxes/libgovf-0.1.so
 
 %files libexec
 %defattr(-,root,root,-)
+/V3/usr/libexec/gnome-boxes-search-provider
 /usr/libexec/gnome-boxes-search-provider
 
 %files license
