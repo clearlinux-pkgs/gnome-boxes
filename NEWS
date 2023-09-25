@@ -1,66 +1,22 @@
-44.3 - Sep 04, 2023
+45.0 - Sep 18, 2023
 ===================
+
+Changes since 45.rc
+
+  - Fix crash in the flatpak detection code causing a crash when closing
+  - Added/updated/fixed translations
+
+45.rc - Sep 04, 2023
+====================
 
 Changes since 44.2
 
-  - Fix issues with sensitivity of "create" button
   - Mark Shell search-provider to not autostart
-  - Improve OS download error reporting
-  - Improve handling when KVM is not available
-  - Fix VM creation when setting G_MESSAGES_DEBUG env var
-  - Fix current-memory property not updated when changing VM RAM preference
-  - Various appdata fixes and improvements
+  - Report OS download errors to the user
+  - Fix current-memory not being updated on RAM preference changes
+  - Fix failure to create VMs when G_MESSAGES_DEBUG=all was set
+  - Appdata updates and validation fixes
   - Added/updated/fixed translations
-
-44.2 - May 30, 2023
-===================
-
-Changes since 44.1
-
-  - Save manual configuration edits on CHANGES_DONE_HINT
-  - Fix issue with pre-filling VM memory/storage resources
-  - Preserve run-in-background and 3D acceleration configs for VM clones
-  - Fix issue with shared folders not appearing for newly created VMs
-  - Added/updated/fixed translations
-
-44.1 - Mar 31, 2023
-===================
-
-Changes since 44.0
-
-  - Fix current-memory not being set on VM creation
-  - Fix issues with decompressing disk files
-  - Fix 3D acceleration not sticking at startup
-  - Always enable boot menu option
-  - Don't launch Preferences dialog along with troubleshooting logs
-
-44.0 - Mar 17, 2023
-===================
-
-Changes since 44.rc
-
-  - Always create SPICE agent channel config
-  - Fix increments in VM creation Storage Limit spin button
-  - Don't fail to parse manually entered storage value on different locales
-  - Added/updated/fixed translations
-
-44.rc - Mar 06, 2023
-====================
-
-Changes since 44.beta.1
-
-  - Fix VM renaming issues
-  - Fix errors saving manually edited domain configuration
-  - Fix issues with storage-limit not being set in VM creation
-  - Allow creating VMs without selecting an Osinfo operating system entry
-  - Added/updated/fixed translations
-
-44.beta.1 - Feb 16, 2023
-========================
-
-Changes since 44.beta
-
-  - Update POTFILES.in
 
 44.beta - Feb 14, 2023
 ======================

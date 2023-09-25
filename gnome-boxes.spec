@@ -4,10 +4,10 @@
 # Using build pattern: meson
 #
 Name     : gnome-boxes
-Version  : 44.3
-Release  : 47
-URL      : https://download.gnome.org/sources/gnome-boxes/44/gnome-boxes-44.3.tar.xz
-Source0  : https://download.gnome.org/sources/gnome-boxes/44/gnome-boxes-44.3.tar.xz
+Version  : 45.0
+Release  : 48
+URL      : https://download.gnome.org/sources/gnome-boxes/45/gnome-boxes-45.0.tar.xz
+Source0  : https://download.gnome.org/sources/gnome-boxes/45/gnome-boxes-45.0.tar.xz
 Summary  : Library for reading and writing virtual machine images in the Open Virtualization Format
 Group    : Development/Tools
 License  : CC-BY-2.0 LGPL-2.0 LGPL-2.1
@@ -129,11 +129,11 @@ locales components for the gnome-boxes package.
 
 
 %prep
-%setup -q -n gnome-boxes-44.3
-cd %{_builddir}/gnome-boxes-44.3
+%setup -q -n gnome-boxes-45.0
+cd %{_builddir}/gnome-boxes-45.0
 %patch -P 1 -p1
 pushd ..
-cp -a gnome-boxes-44.3 buildavx2
+cp -a gnome-boxes-45.0 buildavx2
 popd
 
 %build
@@ -141,7 +141,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1694731567
+export SOURCE_DATE_EPOCH=1695679240
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
