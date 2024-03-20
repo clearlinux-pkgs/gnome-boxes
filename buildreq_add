@@ -9,3 +9,6 @@ libusb-dev
 spice-gtk
 spice-gtk-dev
 vte-dev
+libvirt-glib-dev
+appstream
+appstream-glib-dev
